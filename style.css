@@ -1,0 +1,138 @@
+:root {
+    --pastel-peach: #fff7e6;
+    --text-color: #333;
+  }
+  
+  body {
+    font-family: 'Anek Latin', sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rye', cursive;
+  }
+  
+  /* Cover Section */
+  .cover-section {
+    position: relative;
+    background: url('elements/cover.JPG') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cover-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .couple-name {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+  
+  .cover-quote {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+  
+  /* Bride & Groom Details */
+  .couple-section {
+    background: var(--pastel-peach);
+    padding: 4rem 0;
+  }
+  
+  .bride-col {
+    border-right: 2px solid #6c757d;
+  }
+  
+  @media (max-width: 767.98px) {
+    .bride-col {
+      border: none;
+      border-bottom: 2px solid #6c757d;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+  
+  /* Event Details */
+  .event-details-section {
+    padding: 4rem 0;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    background: var(--pastel-peach);
+    padding: 3rem 0;
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--pastel-peach);
+    padding: 1rem 0;
+    border-top: 1px solid #d3cfcf;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0.25rem 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  /* Scroll-reveal */
+  .section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Background Audio & Mute Button */
+  #bg-music {
+    display: none;
+  }
+/* Ensure the modal can overlay everything */
+.modal-backdrop.show {
+    opacity: 0.8;
+  }
+  
+  
+  #mute-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    transition: background 0.3s;
+  }
+  
+  #mute-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
