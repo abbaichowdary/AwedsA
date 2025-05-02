@@ -45,35 +45,43 @@
 </head>
 
 <body>
-  <!-- Sound Unlock Modal -->
-  <div
-    class="modal fade"
-    id="soundModal"
-    tabindex="-1"
-    aria-labelledby="soundModalLabel"
-    aria-hidden="true"
-  >
+<!-- Sound Unlock Modal -->
+<div class="modal fade" id="soundModal" tabindex="-1" aria-labelledby="soundModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content text-center">
-        <div class="modal-header border-0">
-          <h5
-            class="modal-title w-100"
-            id="soundModalLabel">
+      <div class="modal-content text-center position-relative">
+        <div class="modal-header border-0 justify-content-center">
+          <h5 class="modal-title w-100 display-6" id="soundModalLabel" style="color: ivory;">
             ! నమస్తే !
           </h5>
         </div>
+        <img 
+          src="../elements/welcome.png" 
+          alt="Seven Steps" 
+          class="modal-icon icon-center mb-3"
+        />
+  
         <div class="modal-body">
-          <p>Welcome to our wedding invitation 🎉</p>
-          <p class="text-danger"><strong>Heads up:</strong> This page will play music 🎶</p>
+          <p class="lead">
+            Welcome to our Mothina wedding invitation 🎉
+          </p>
+          <p class="text-danger fw-bold">
+            Heads up: This page will play music <span class="fs-3">🎶</span>
+          </p>
         </div>
         <div class="modal-footer justify-content-center border-0">
-          <button type="button" id="enable-sound" class="btn btn-primary">
+          <button
+            type="button"
+            id="enable-sound"
+            class="btn btn-primary btn-lg px-4"
+          >
             Proceed
           </button>
         </div>
       </div>
     </div>
   </div>
+  
+
 
   <!-- Background Audio -->
   <audio id="bg-music" loop muted autoplay>
@@ -99,29 +107,42 @@
     </div>
   </section>
 
-  <!-- Groom & Bride Details -->
   <section id="couple-details" class="couple-section section">
-    <div class="container">
+    <div class="container-fluid">
       <h2 class="text-center">The Couple</h2>
-      <br />
-      <div class="row" style="font-size: 2vh;">
-        <!-- Groom First -->
-        <div class="col-md-6 groom-col text-end pe-md-5">
+      <div class="row align-items-center" style="font-size: 2vh;">
+        <!-- Bride Details -->
+        <div class="col-md-4 text-start order-md-1">
           <h2>Groom</h2>
           <h3 style="font-family: 'Anek Latin', sans-serif; color: ivory;"><strong>Mothina Abbai Chowdary</strong></h3>
           <p>EEE, Bachelor of Technology</p>
           <p><strong>S/O:</strong> Bhaskar Rao &amp; Venkata Laxmi</p>
         </div>
-        <!-- Then Bride -->
-        <div class="col-md-6 ps-md-5">
+  
+        <!-- Bride Parents Photo -->
+        <div class="col-md-2 text-center order-md-2">
+          <img src="../elements/groom_parents.jpg"
+               alt="Groom's Parents"
+               class="parent-photo">
+        </div>
+  
+        <!-- Groom Parents Photo -->
+        <div class="col-md-2 text-center order-md-3">
+          <img src="../elements/bride_parents.jpg"
+               alt="Bride's Parents"
+               class="parent-photo ">
+        </div>
+  
+        <!-- Groom Details -->
+        <div class="col-md-4 text-end order-md-4">
           <h2>Bride</h2>
-          <h3 style="font-family: 'Anek Latin', sans-serif; color: ivory;"><strong>Muthyala Anusha</strong> </h3>
-          <p>ECE, Bachelor of Technology</p>
+          <h3 style="font-family: 'Anek Latin', sans-serif; color: ivory;"><strong>Muthyala Anusha</strong></h3>          <p>ECE, Bachelor of Technology</p>
           <p><strong>D/O:</strong> Srinivasu &amp; Rajeshwari</p>
         </div>
       </div>
     </div>
   </section>
+    
 <hr>
   <!-- Event Details -->
   <section id="event-details" class="event-details-section section">

@@ -5,6 +5,7 @@
     --font-color: #DBAFA0;     /* body text */
   }
   
+  /* Global */
   body {
     margin: 0;
     padding: 0;
@@ -13,9 +14,14 @@
     color: var(--font-color);
   }
   
-/* Invite Cards */
-/* Card Base (Resting) */
-.invite-card .card {
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-family: 'Rye', cursive;
+  }
+  
+  /* Invite Cards */
+  /* Card Base (Resting) */
+  .invite-card .card {
     background-color: var(--card-bg);
     border-radius: 1rem;
     box-shadow:
@@ -31,6 +37,18 @@
       inset 4px 4px 8px rgba(0, 0, 0, 0.4),
      -inset 4px -4px 8px rgba(255, 255, 255, 0.1);
     transform: translateY(7px);
+  }
+
+.modal-icon.icon-center {
+    position: relative !important;
+    top: 0;
+    left: 0;
+    display: block;
+    margin: 1rem auto 2rem;
+    width: 90%;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
   
   .invite-card .card-body {
@@ -56,50 +74,110 @@
     color: var(--heading-color);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-  
-  /* Hover Effect */
   .invite-card:hover .btn {
     background-color: var(--heading-color);
     color: var(--bg-color);
   }
   
-  /* Mobile tweaks */
+  /* Prevent fluid containers from overflowing */
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Parent photos in “The Couple” section — larger & soft corners */
+  .parent-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.5 / 1;    /* keep square */
+    object-fit: cover;
+    border-radius: 10px;    /* soft corners */
+    border: 3px solid var(--heading-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    margin: 0 auto;         /* center in column */
+  }
+  .parent-photo:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive adjustments */
   @media (max-width: 767.98px) {
-    .invite-card .card-body {
-      padding: 1.5rem;
+    .parent-photo {
+      max-width: 200px;     /* still sizable on phone */
     }
-    .invite-card .card-title {
-      font-size: 1.5rem;
+    /* Stack couple-details vertically on small viewports */
+    #couple-details .row {
+      flex-direction: column;
+      text-align: center;
+    }
+    #couple-details .row > div {
+      margin-bottom: 1.5rem;
     }
   }
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    font-family: 'Rye', cursive;
-  }
-  strong{
-    color: ivory;
-  }
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-  /* Modal */
+  
+  /* Modal Enhancements */
+  /* Modal Content Styling */
   .modal-content {
-    background-color: var(--bg-color);
+    background: var(--bg-color)
+      url('../elements/mandala_watermark.png') center/300px no-repeat;
+    background-blend-mode: overlay;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    padding: 2rem 1rem 3rem;
     color: var(--font-color);
   }
-  #soundModalLabel {
+  
+  /* Modal Title Depth */
+  .modal-title {
     font-family: 'Ponnala', serif;
     font-size: 3rem;
-    color: ivory;
+    color: #BB8493;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
+  
+  /* Body Text Styling */
   .modal-body p {
+    font-family: 'Anek Latin', sans-serif;
     color: var(--font-color);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 0.75rem;
   }
+  
+  /* Proceed Button Enhancement */
+  #enable-sound {
+    font-family: 'Rye', cursive;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  #enable-sound:hover,
+  #enable-sound:focus {
+    transform: translateY(2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+  
+  /* Decorative Icons */
+  .modal-icon {
+    position: absolute;
+    width: 50%;
+    opacity: 0.85;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .icon-left {
+    top: -12px;
+    left: -12px;
+  }
+  .icon-right {
+    top: -12px;
+    right: -12px;
+  }
+  .modal-icon:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
   .btn-primary {
     background-color: var(--heading-color);
     border-color: var(--heading-color);
