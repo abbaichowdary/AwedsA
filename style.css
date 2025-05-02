@@ -102,6 +102,32 @@
   .parent-photo:hover {
     transform: scale(1.05);
   }
+
+  /* Main Couple Photo – Neomorphic Card */
+.couple-main-photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    object-fit: cover;
+    /* Neomorphic / depth effect */
+    box-shadow:
+      8px 8px 16px rgba(0, 0, 0, 0.4),      /* dark shadow */
+     -8px -8px 16px rgba(255, 255, 255, 0.1); /* light highlight */
+    background-color: var(--bg-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .couple-main-photo:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      4px 4px 12px rgba(0, 0, 0, 0.3),
+     -4px -4px 12px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Ivory text helper (to keep inline styling DRY) */
+  .text-ivory {
+    color: ivory;
+  }
+  
   
   /* Responsive adjustments */
   @media (max-width: 767.98px) {
