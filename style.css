@@ -1,17 +1,111 @@
 :root {
-    --pastel-peach: #fff7e6;
-    --text-color: #333;
+    --bg-color: #49243E;       /* dark background */
+    --footer-bg: #704264;      /* footer background */
+    --heading-color: #BB8493;  /* headings */
+    --font-color: #DBAFA0;     /* body text */
   }
   
   body {
-    font-family: 'Anek Latin', sans-serif;
-    color: var(--text-color);
     margin: 0;
     padding: 0;
+    font-family: 'Anek Latin', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--font-color);
   }
   
-  h1, h2, h3, h4, h5, h6 {
+/* Invite Cards */
+/* Card Base (Resting) */
+.invite-card .card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow:
+      6px 6px 12px rgba(0, 0, 0, 0.4),
+     -6px -6px 12px rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Card Pressed (Hover or Active) */
+  .invite-card:hover .card,
+  .invite-card:active .card {
+    box-shadow:
+      inset 4px 4px 8px rgba(0, 0, 0, 0.4),
+     -inset 4px -4px 8px rgba(255, 255, 255, 0.1);
+    transform: translateY(7px);
+  }
+  
+  .invite-card .card-body {
+    padding: 2rem;
+  }
+  .invite-card .card-title {
     font-family: 'Rye', cursive;
+    color: var(--heading-color);
+    font-size: 1.75rem;
+  }
+  .invite-card .card-text {
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  .invite-card .invite-name {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--font-color);
+  }
+  .invite-card .btn {
+    border-color: var(--heading-color);
+    color: var(--heading-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .invite-card:hover .btn {
+    background-color: var(--heading-color);
+    color: var(--bg-color);
+  }
+  
+  /* Mobile tweaks */
+  @media (max-width: 767.98px) {
+    .invite-card .card-body {
+      padding: 1.5rem;
+    }
+    .invite-card .card-title {
+      font-size: 1.5rem;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-family: 'Rye', cursive;
+  }
+  strong{
+    color: ivory;
+  }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+  /* Modal */
+  .modal-content {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
+  #soundModalLabel {
+    font-family: 'Ponnala', serif;
+    font-size: 3rem;
+    color: ivory;
+  }
+  .modal-body p {
+    color: var(--font-color);
+  }
+  .btn-primary {
+    background-color: var(--heading-color);
+    border-color: var(--heading-color);
+  }
+  .modal-backdrop.show {
+    opacity: 0.8;
   }
   
   /* Cover Section */
@@ -23,116 +117,102 @@
     align-items: center;
     justify-content: center;
   }
-  
   .cover-section .overlay {
     position: absolute;
     inset: 0;
-    background: #000;
-    opacity: 0.5;
+    background: rgba(0,0,0,0.7);
     z-index: 1;
   }
-  
   .cover-content {
     position: relative;
     z-index: 2;
     text-align: center;
-    color: #fff;
   }
-  
   .couple-name {
     font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--heading-color);
   }
-  
   .cover-quote {
     font-size: 1.25rem;
     margin-top: 1rem;
     font-style: italic;
+    color: var(--font-color);
   }
   
-  /* Bride & Groom Details */
-  .couple-section {
-    background: var(--pastel-peach);
-    padding: 4rem 0;
+  /* Groom & Bride Sections */
+  .couple-section,
+  .event-details-section,
+  .contact-section {
+    background-color: var(--bg-color);
+    padding: 3rem 0;
   }
-  
-  .bride-col {
-    border-right: 2px solid #6c757d;
+  .groom-col {
+    border-right: 2px solid var(--heading-color);
   }
-  
   @media (max-width: 767.98px) {
-    .bride-col {
+    .groom-col {
       border: none;
-      border-bottom: 2px solid #6c757d;
+      border-bottom: 2px solid var(--heading-color);
       margin-bottom: 2rem;
       padding-bottom: 2rem;
     }
   }
   
   /* Event Details */
-  .event-details-section {
-    padding: 4rem 0;
+  .event-details-section h2,
+  .event-details-section h3 {
+    color: var(--heading-color);
   }
   
   /* Contact Section */
-  .contact-section {
-    background: var(--pastel-peach);
-    padding: 3rem 0;
+  .contact-section h2 {
+    color: var(--heading-color);
   }
   
   /* Footer */
   footer {
-    background: var(--pastel-peach);
-    padding: 1rem 0;
-    border-top: 1px solid #d3cfcf;
+    background-color: var(--footer-bg);
     text-align: center;
+    padding: 1rem 0;
   }
-  
   footer p {
     margin: 0.25rem 0;
-    color: #6c757d;
+    color: var(--font-color);
     font-size: 0.9rem;
   }
   
-  /* Scroll-reveal */
+  /* Scroll reveal */
   .section {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
   }
-  
   .section.show {
     opacity: 1;
     transform: translateY(0);
   }
   
-  /* Background Audio & Mute Button */
+  /* Audio & Mute Button */
   #bg-music {
     display: none;
   }
-/* Ensure the modal can overlay everything */
-.modal-backdrop.show {
-    opacity: 0.8;
-  }
-  
-  
   #mute-btn {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
     width: 3rem;
     height: 3rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--font-color);
     cursor: pointer;
     z-index: 999;
     transition: background 0.3s;
   }
-  
   #mute-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0,0,0,0.7);
   }
   
