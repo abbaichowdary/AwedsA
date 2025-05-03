@@ -91,7 +91,7 @@
   .parent-photo {
     width: 100%;
     height: auto;
-    aspect-ratio: 1.5 / 1;    /* keep square */
+    aspect-ratio: 1.5 / 1.5;    /* keep square */
     object-fit: cover;
     border-radius: 10px;    /* soft corners */
     border: 3px solid var(--heading-color);
@@ -109,7 +109,6 @@
     max-width: 400px;
     border-radius: 1rem;
     object-fit: cover;
-    /* Neomorphic / depth effect */
     box-shadow:
       8px 8px 16px rgba(0, 0, 0, 0.4),      /* dark shadow */
      -8px -8px 16px rgba(255, 255, 255, 0.1); /* light highlight */
@@ -125,6 +124,10 @@
   
   /* Ivory text helper (to keep inline styling DRY) */
   .text-ivory {
+    color: ivory;
+  }
+
+  strong{
     color: ivory;
   }
   
