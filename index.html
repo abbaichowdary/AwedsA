@@ -38,41 +38,102 @@
       
         <!-- Custom CSS -->
         <link rel="stylesheet" href="style.css" />
+        <style>
+            /* Add to :root */
+:root {
+    --card-bg: #704264; /* New variable for card background */
+}
+
+/* Fix card styling */
+.invite-card .card {
+    background-color: var(--card-bg);
+    min-height: 400px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.invite-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Text contrast fixes */
+.card-text,
+.invite-name {
+    color: ivory !important;
+}
+
+/* Button styling */
+.btn-outline-light {
+    border-color: var(--heading-color);
+    color: var(--heading-color);
+    width: fit-content;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--heading-color);
+    color: var(--bg-color);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .invite-card .card {
+        min-height: 300px;
+    }
+    
+    .card-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .card-text {
+        font-size: 1rem !important;
+    }
+}
+
+/* Container fix */
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+        </style>
       </head>
 <body>
-
-  <main class="d-flex vh-100 align-items-center justify-content-center" style="background-color: var(--bg-color);">
-    <div class="container-fluid">
-      <div class="row gx-4 gy-4">
-        <!-- Groom’s Invite Card -->
-        <div class="col-md-6">
-          <a href="#" class="invite-card text-decoration-none">
-            <div class="card h-100 border-0">
-              <div class="card-body">
-                <h3 class="card-title">Groom’s Invite</h3>
-                <p class="card-text">Hear the groom’s side of our story—where love first sparked.</p>
-                <p class="invite-name">Mothina Abbai Chowdary</p>
-                <span class="btn btn-outline-light mt-3">Have a Look</span>
-              </div>
+    <main class="vh-100 d-flex align-items-center">
+        <div class="container">
+            <h1 class="text-center text-ivory">Abbai Chowdary ❤️ Anusha</h1><br><br>
+        <div class="row g-4 justify-content-center">
+            <!-- Groom’s Invite Card -->
+            <div class="col-12 col-md-10 col-lg-6">
+            <a href="https://abbaichowdary.github.io/AwedsA/main/groom.html" class="invite-card text-decoration-none">
+                <div class="card h-100 border-0">
+                <div class="card-body p-4 text-center">
+                    <h3 class="card-title display-5 mb-3">Groom’s Invite</h3>
+                    <p class="card-text fs-5 mb-4">Hear the groom’s side of our story—where love first sparked.</p>
+                    <p class="invite-name h4 mb-4">Mothina Abbai Chowdary</p>
+                    <span class="btn btn-outline-light px-4 py-2">Have a Look</span>
+                </div>
+                </div>
+            </a>
             </div>
-          </a>
-        </div>
-        <!-- Bride’s Invite Card -->
-        <div class="col-md-6">
-          <a href="#" class="invite-card text-decoration-none">
-            <div class="card h-100 border-0">
-              <div class="card-body">
-                <h3 class="card-title">Bride’s Invite</h3>
-                <p class="card-text">Discover the bride’s journey—where two hearts became one.</p>
-                <p class="invite-name">Muthyala Anusha</p>
-                <span class="btn btn-outline-light mt-3">Have a Look</span>
-              </div>
+            
+            <!-- Bride’s Invite Card -->
+            <div class="col-12 col-md-10 col-lg-6">
+            <a href="https://abbaichowdary.github.io/AwedsA/main/bride.html" class="invite-card text-decoration-none">
+                <div class="card h-100 border-0">
+                <div class="card-body p-4 text-center">
+                    <h3 class="card-title display-5 mb-3">Bride’s Invite</h3>
+                    <p class="card-text fs-5 mb-4">Discover the bride’s journey—where two hearts became one.</p>
+                    <p class="invite-name h4 mb-4">Muthyala Anusha</p>
+                    <span class="btn btn-outline-light px-4 py-2">Have a Look</span>
+                </div>
+                </div>
+            </a>
             </div>
-          </a>
         </div>
-      </div>
-    </div>
-  </main>
+        </div>
+    </main>
 
   <!-- Bootstrap JS (optional for future interactivity) -->
   <script

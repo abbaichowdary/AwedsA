@@ -8,12 +8,32 @@
   /* Global */
   body {
     margin: 0;
-    padding: 0;
+    padding-top: 2.5rem; /* adjust if you change the bar height */
     font-family: 'Anek Latin', sans-serif;
     background-color: var(--bg-color);
     color: var(--font-color);
   }
+  /* Top Bar with three words spaced left/center/right */
+.top-bar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem;
+    font-family: 'Ponnala', serif;
+    font-size: 1rem;
+    color: yellow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050; /* above other content but below modal */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
+  /* Explicit text alignment (fallback in case flex shifts) */
+  .tb-left   { text-align: left;  flex: 1; }
+  .tb-center { text-align: center; flex: 1; }
+  .tb-right  { text-align: right; flex: 1; }
   h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
     font-family: 'Rye', cursive;
